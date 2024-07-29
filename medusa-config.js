@@ -37,9 +37,11 @@ const plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
   {
-    resolve: `@medusajs/file-local`,
+    resolve: "@medusajs/admin",
+    /** @type {import('@medusajs/admin').PluginOptions} */
     options: {
-      upload_dir: "uploads",
+      serve: process.env.NODE_ENV === "development",
+
     },
   },
   {
